@@ -3,8 +3,7 @@ import { LOOP_NAMES, DIRECTION_LABELS } from "@/lib/segments";
 
 export const dynamic = "force-dynamic";
 
-// TODO: Remove mock data and restore DB queries once Postgres is connected
-const USE_MOCK = !process.env.POSTGRES_URL;
+const USE_MOCK = !process.env.POSTGRES_URL && !process.env.DATABASE_URL;
 
 function getMockData() {
   const today = new Date();
