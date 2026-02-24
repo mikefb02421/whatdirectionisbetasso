@@ -4,11 +4,6 @@ import { LOOP_NAMES, DIRECTION_LABELS } from "@/lib/segments";
 export const dynamic = "force-dynamic";
 
 const USE_MOCK = !process.env.POSTGRES_URL && !process.env.DATABASE_URL;
-const DB_DEBUG = {
-  hasPostgresUrl: !!process.env.POSTGRES_URL,
-  hasDatabaseUrl: !!process.env.DATABASE_URL,
-  mock: USE_MOCK,
-};
 
 function getMockData() {
   const today = new Date();
@@ -48,7 +43,7 @@ function getMockData() {
 
 export async function GET() {
   if (USE_MOCK) {
-    return NextResponse.json({ ...getMockData(), _debug: DB_DEBUG });
+    return NextResponse.json(getMockData());
   }
 
   try {
