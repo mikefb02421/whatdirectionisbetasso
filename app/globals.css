@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+:root {
+  --color-forest: #2d5016;
+  --color-trail: #8b6914;
+  --color-stone: #6b7280;
+  --color-earth: #92400e;
+  --color-sky: #0369a1;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-forest: #4ade80;
+    --color-trail: #fbbf24;
+  }
+}
